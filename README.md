@@ -1,12 +1,28 @@
-# Mediapicker Module for Android
+# MediaPicker Library
+
+This library is for apps requiring **broad access to photo and video files** located in shared storage. Apps using this library will need to pass an appropriate access review and demonstrate a core use case that requires **persistent or frequent** access to photo, image, or video files.
 
 <div style="display: flex; justify-content: space-between;">
 <img src="image_2024_11_28T10_43_23_770Z.png" alt="MediaPicker Screenshot" width="250"/>
 <img src="image_2024_11_28T10_44_04_760Z.png" alt="MediaPicker Screenshot" width="250"/>
 <img src="image_2024_11_28T10_45_10_636Z.png" alt="MediaPicker Screenshot" width="250"/>
 <img src="image_2024_11_29T06_49_35_406Z.png" alt="MediaPicker Screenshot" width="250"/>
-
 </div>
+
+### Overview
+The MediaPicker Library is designed for apps that require broad access to photo and video files. This library allows for persistent access to media files stored in shared storage, which is necessary for apps that need to access multiple images and videos on a frequent basis.
+
+This library is ideal for apps that:
+
+- Need to access multiple photos/videos regularly.
+- Need to support core use cases that involve managing large media libraries.
+
+### Features
+
+- Provides access to media files stored in shared storage, allowing for broad and frequent access.
+- Compliant with the latest Google policies but requires appropriate access review for approval.
+- Supports both images and videos.
+- Allows for media management features like bulk selection, organization, and access.
 
 ### Installation
 
@@ -20,12 +36,12 @@ To integrate the **Mediapicker** module into your Android project, follow these 
        implementation 'com.github.Nishith4545:MediaPicker:x.x.x'
    }
    
-The **Mediapicker Module** is a Kotlin-based Android library designed to simplify media selection in your apps. It automatically handles permissions related to media access and eliminates the need to manually declare them in your app's `AndroidManifest.xml`. Additionally, it supports **Android 14's Limited Access** feature, allowing users to grant access to specific photos and videos instead of all media files on their device.
+The **Mediapicker Library** is a Kotlin-based Android library designed to simplify media selection in your apps. It automatically handles permissions related to media access and eliminates the need to manually declare them in your app's `AndroidManifest.xml`. Additionally, it supports **Android 14's Limited Access** feature, allowing users to grant access to specific photos and videos instead of all media files on their device.
 
 ## Features
 
 ### 1. **Automatic Permission Handling**
-   - **Mediapicker Module** automatically manages runtime permissions for accessing photos and videos.
+   - **Mediapicker Library** automatically manages runtime permissions for accessing photos and videos.
    - No need to manually declare permissions in your app's `AndroidManifest.xml`. The module handles everything internally.
    - Permissions are requested at runtime only when required, ensuring better security and compliance with Android's privacy policies.
 
@@ -34,12 +50,12 @@ The **Mediapicker Module** is a Kotlin-based Android library designed to simplif
    - Users can select specific photos or videos to share with your app, providing better privacy controls.
    - The module ensures seamless handling of these restricted permissions on Android 14 and above, with no additional setup required from the developer.
 
-3. **Usage**
-   - The Mediapicker module provides an easy-to-use API to launch media selection and handle results, including permissions and access.
+ ### Usage
+   - The Mediapicker Library provides an easy-to-use API to launch media selection and handle results, including permissions and access.
 
 ### In Your Fragment or Activity
 
-To use the **Mediapicker Module**, you need to declare the `MediaSelectHelper` and configure it according to your media selection requirements.
+To use the **Mediapicker Library**, you need to declare the `MediaSelectHelper` and configure it according to your media selection requirements.
 
 #### Step 1: Initialize the Helper
 
@@ -63,7 +79,7 @@ mediaSelectHelper.canSelectMultipleVideo(false) // Set whether multiple videos c
 mediaSelectHelper.selectOptionsForVideoPicker() // Enable video picker options
 ```
 
-#### Step 3(Optional): Customize Limited Access Screen
+#### Step 3: (Optional): Customize Limited Access Screen
 To change the background color of the limited access media screen:
 ```kotlin
 mediaSelectHelper.setLimitedAccessLayoutBackgroundColor(R.color.teal_200)
